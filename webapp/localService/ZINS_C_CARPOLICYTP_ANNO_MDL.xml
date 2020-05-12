@@ -1,0 +1,84 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="./SAP/ZINS_C_CARPOLICYTP_SRV_01/$metadata"><edmx:Include Namespace="ZINS_C_CARPOLICYTP_SRV_01" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zins_c_carpolicytp_anno_mdl.v1">
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_CARPOLICYTPType/lchg_date_time"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_CARPOLICYTPType/lchg_uname"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_CARPOLICYTPType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Policies"/><PropertyValue Property="TypeNamePlural" String="Policies"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="policy_id"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Policy ID"/><PropertyValue Property="Value" Path="policy_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="cust_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="create_date"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="end_date"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="period"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="amount"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="isarchived"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="crea_date_time"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="crea_uname"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="cust_id"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="create_date"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="end_date"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="amount"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CurrencyCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>create_date</PropertyPath>
+						<PropertyPath>end_date</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_INSUREDCARTPType/policy_id"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_INSUREDCARTPType/lchg_date_time"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_INSUREDCARTPType/lchg_uname"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZINS_C_CARPOLICYTP_SRV_01.ZINS_C_INSUREDCARTPType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Insured Cars"/><PropertyValue Property="TypeNamePlural" String="Insured Cars"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ins_car_id"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ins_car_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="make_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="model_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="car_production_date"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="engine_capacity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="number_plate"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="vin_number"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="crea_date_time"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="crea_uname"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="make_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="model_id"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="car_production_date"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="number_plate"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
